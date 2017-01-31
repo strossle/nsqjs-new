@@ -289,6 +289,7 @@ class ReaderRdy extends NodeState
         connectionRdy.bump()
 
   removeConnection: (conn) ->
+    return if @connections.length is 0
     @connections.splice @connections.indexOf(conn), 1
     @roundRobinConnections.remove conn
 
